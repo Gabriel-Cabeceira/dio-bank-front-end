@@ -12,6 +12,7 @@ A aplicação "DIO Bank" simula uma página de login, onde os usuários podem ac
 
 Para explorar a página de login e ter uma experiência simulada, utilize as seguintes credenciais:
 
+- Link para acesso em produção: https://diobankgc.netlify.app/
 - Email: gabriel@dio.com
 - Senha: Senha123
 
