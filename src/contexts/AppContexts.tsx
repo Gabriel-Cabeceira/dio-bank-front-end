@@ -1,7 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { GetAllLocalStorage, createLocalStorage } from '../services/localStorage/localStorage';
-import { type } from 'os';
-
+import { GetAllLocalStorage } from '../services/localStorage/localStorage';
 
 
 interface IAppContext {
@@ -27,7 +25,7 @@ interface IAppContext {
         const { login } = JSON.parse(storage);
         setIsLoggedIn(login)
       }
-    }, [])
+    }, [storage])
 
     
     const user = 'gabrielccg';
