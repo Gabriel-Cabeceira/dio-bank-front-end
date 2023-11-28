@@ -8,7 +8,11 @@ export const StyledHeader = styled.header`
     height: 3em;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: absolute;
     top: 0;
+`
+
+export const DioBankTitle = styled.h1`
+    margin-left: 3em;
 `

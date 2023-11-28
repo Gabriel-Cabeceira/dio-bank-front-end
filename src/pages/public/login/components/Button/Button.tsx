@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import { StyledButton } from './Button-styles';
 
 
-interface IButtonProps {
+interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
     textContent: string;
     onClick: () => void;
 }
 
-export const Button: React.FC<IButtonProps> = ({ textContent, onClick }) => {
+export const Button: React.FC<IButtonProps> = ({ textContent, onClick, type }) => {
   return (
-    <StyledButton onClick={onClick}>
+    <StyledButton onClick={onClick} type={type}>
       {textContent}
     </StyledButton>
   )

@@ -1,21 +1,29 @@
-import React from 'react';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import './App.css'
+import {BrowserRouter as Router } from "react-router-dom";
+import { MainRoutes } from './routes/routes';
+import './App.css';
+import { AppContextProvider } from './contexts/AppContexts'
 import { Layout } from './shered/Layout/Layout';
-import { FormLogin } from './pages/public/login/Login';
 import { ChakraProvider } from '@chakra-ui/react';
+import { GetAllLocalStorage, createLocalStorage } from "./services/localStorage/localStorage";
+
 
 function App() {
+
+  if(!GetAllLocalStorage()){
+    createLocalStorage();
+  }
+
+
   return (
-    <ChakraProvider>
-      <Layout>
-        <Router>
-          <Routes>
-            <Route path='/' element={<FormLogin />}/>
-          </Routes>
-        </Router>
-      </Layout>
-    </ChakraProvider>
+    <Router>
+      <AppContextProvider>
+        <ChakraProvider>
+          <Layout>
+            <MainRoutes />
+          </Layout>
+        </ChakraProvider>
+      </AppContextProvider>
+    </Router>
   );
 }
 
